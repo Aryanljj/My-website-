@@ -28,36 +28,33 @@
       line-height: 1.6;
     }
 
+    /* ---- HEADER ---- */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 10%;
+      padding: 8px 8%;  /* patti chhoti */
       position: sticky;
       top: 0;
       background: var(--bg);
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       z-index: 10;
     }
-
-    /* Logo + Text container */
-    .logo-container {
+    .logo {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .logo-container img {
-      width: 45px;
-      height: 45px;
+    .logo img {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       border: 2px solid var(--accent);
     }
-    .logo-container h1 {
-      font-size: 22px;
-      font-weight: 700;
+    .logo h1 {
+      font-size: 20px;
       color: var(--accent);
-      font-family: 'Segoe Script', cursive;
-      letter-spacing: 1px;
+      font-weight: 600;
     }
 
     nav a {
@@ -73,9 +70,10 @@
 
     .theme-toggle {
       cursor: pointer;
-      font-size: 20px;
+      font-size: 18px;
     }
 
+    /* ---- SECTIONS ---- */
     section {
       padding: 60px 10%;
       text-align: center;
@@ -171,10 +169,10 @@
   </style>
 </head>
 <body>
-
+  <!-- HEADER -->
   <header>
-    <div class="logo-container">
-      <img src="https://i.ibb.co/5rmX9fR/logo.png" alt="Logo"> <!-- yaha apna logo link lagana -->
+    <div class="logo">
+      <img src="https://i.ibb.co/n8D3VyB4" alt="Logo">
       <h1>Aryan & Aruu</h1>
     </div>
     <nav>
@@ -186,24 +184,28 @@
     <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
   </header>
 
+  <!-- HERO -->
   <section class="hero" id="home">
     <img src="https://i.ibb.co/8Dfdkz1W/IMG-20250219-070558.jpg" alt="Aryan">
     <h2>Hey 👋, I’m Aryan Keer</h2>
     <p>Life is short, so live it with full energy 🔥⚡</p>
   </section>
 
+  <!-- ABOUT -->
   <section class="about" id="about">
     <h2>About Me</h2>
     <p>Welcome to my stylish website 💙✨<br>
        I love creating, exploring, and living with positivity!</p>
   </section>
 
+  <!-- LOVE -->
   <section class="love" id="love">
     <h2>💙 Special 💙</h2>
     <img src="https://i.ibb.co/B2N4R4wr/IMG-20250603-131234.jpg" alt="Aryan & Aruu">
     <h3>💙 Aruu & Lakshu 💙</h3>
   </section>
 
+  <!-- CONTACT -->
   <section class="contact" id="contact">
     <h2>Contact Me</h2>
     <div class="socials">
@@ -214,7 +216,6 @@
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
       </a>
     </div>
-
     <form onsubmit="sendMail(event)">
       <input type="text" id="name" placeholder="Your Name" required><br>
       <input type="email" id="email" placeholder="Your Email" required><br>
@@ -223,16 +224,20 @@
     </form>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     ✨ Made with ❤️ by Aryan Keer ✨
   </footer>
 
+  <!-- SCRIPT -->
   <script>
+    // Theme toggle
     function toggleTheme() {
       document.body.dataset.theme =
         document.body.dataset.theme === "dark" ? "light" : "dark";
     }
 
+    // Scroll animations
     const sections = document.querySelectorAll(".about, .love, .contact");
     window.addEventListener("scroll", () => {
       sections.forEach(sec => {
@@ -243,6 +248,7 @@
       });
     });
 
+    // Contact form
     function sendMail(e) {
       e.preventDefault();
       const name = document.getElementById("name").value;
