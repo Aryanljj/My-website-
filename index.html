@@ -3,212 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aryan & Aruu</title>
+  <title>Aryan Keer</title>
   <style>
-    body {
+    /* Reset */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #000428, #004e92);
-      color: white;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
+      line-height: 1.6;
+      color: #222;
+      background: #fdfdfd;
     }
 
     /* Navbar */
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      padding: 15px 0;
       display: flex;
-      justify-content: center;
-      gap: 40px;
-      z-index: 1000;
-      border-bottom: 2px solid cyan;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    nav a:hover {
-      color: cyan;
-      text-shadow: 0px 0px 10px cyan;
-    }
-
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 80px 20px;
+      padding: 15px 8%;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #0077ff;
+    }
+
+    /* Hero Section */
+    .hero {
       text-align: center;
+      padding: 60px 20px;
     }
 
-    h1 {
-      font-size: 55px;
-      margin-top: 20px;
-      text-shadow: 0px 0px 25px cyan, 0px 0px 40px blue;
-      animation: glow 2s infinite alternate;
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
     }
 
-    @keyframes glow {
-      from { text-shadow: 0px 0px 10px cyan; }
-      to { text-shadow: 0px 0px 30px blue; }
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 25px;
     }
 
-    img.main-photo {
-      width: 270px;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 20px;
-      border: 4px solid cyan;
-      box-shadow: 0px 0px 25px cyan;
-      margin-top: 20px;
-      transition: transform 0.4s;
-    }
-
-    img.main-photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 0px 40px #00f5ff;
-    }
-
-    .about, .love, .contact {
-      margin: 20px auto;
-      width: 85%;
-      font-size: 20px;
-      line-height: 1.8;
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
+    .hero img {
+      width: 240px;
+      height: 280px;
       border-radius: 15px;
-      box-shadow: 0px 0px 20px rgba(0,255,255,0.4);
+      object-fit: cover;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     }
 
-    .socials {
-      margin: 30px 0;
-    }
-
-    .socials a {
-      margin: 0 20px;
-      display: inline-block;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .socials img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 3px solid white;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-      box-shadow: 0px 0px 25px cyan;
-      border-radius: 50%;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      background: rgba(255,255,255,0.1);
-      border-top: 2px solid cyan;
-      font-size: 20px;
+    /* About Section */
+    .about, .love, .contact {
+      padding: 60px 15%;
       text-align: center;
     }
 
-    .love-text {
-      font-size: 28px;
-      margin-top: 15px;
-      text-shadow: 0px 0px 15px pink, 0px 0px 30px red;
-      animation: heartbeat 1.5s infinite;
+    .about h2, .love h2, .contact h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #111;
     }
 
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+    .about p {
+      font-size: 18px;
+      color: #444;
     }
 
-    img.couple-photo {
+    /* Love Section */
+    .love img {
+      margin-top: 20px;
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      border: 4px solid pink;
-      box-shadow: 0px 0px 20px hotpink;
-      margin-top: 15px;
       object-fit: cover;
+      box-shadow: 0 4px 15px rgba(255,0,100,0.4);
+    }
+
+    .love p {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #e91e63;
+      font-weight: bold;
+    }
+
+    /* Contact */
+    .socials {
+      margin-top: 25px;
+    }
+
+    .socials a {
+      margin: 0 15px;
+      display: inline-block;
+    }
+
+    .socials img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    .socials img:hover {
+      transform: scale(1.2);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f4f4f4;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
     }
 
     /* Responsive */
-    @media(max-width:768px){
-      h1{ font-size: 35px; }
-      nav{ gap:20px; }
-      img.main-photo{ width:200px; height:250px; }
+    @media(max-width:768px) {
+      nav ul {
+        display: none;
+      }
+      .about, .love, .contact {
+        padding: 40px 8%;
+      }
+      .hero h2 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
-  </audio>
-
   <!-- Navbar -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#love">Love</a>
-    <a href="#contact">Contact</a>
+    <h1>Aryan Keer</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#love">Love</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- Home -->
-  <section id="home">
-    <h1>⚡ Aryan Keer ⚡</h1>
-    <img class="main-photo" src="https://i.ibb.co/8Dfdkz1W/IMG-20250219-070558.jpg" alt="Aryan Photo">
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <h2>Hey, I’m Aryan Keer</h2>
+    <p>Welcome to my stylish website 💙</p>
+    <img src="https://i.ibb.co/8Dfdkz1W/IMG-20250219-070558.jpg" alt="Aryan Photo">
   </section>
 
   <!-- About -->
-  <section id="about">
-    <div class="about">
-      <p>Hey 👋, I’m <b>Aryan Keer</b>.<br>
-      Welcome to my stylish website 💙✨<br>
-      Life is short, so live it with full energy 🔥⚡</p>
-    </div>
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hey 👋, I’m <b>Aryan Keer</b>.<br>
+    Life is short, so live it with full energy 🔥⚡</p>
   </section>
 
   <!-- Love -->
-  <section id="love">
-    <div class="love">
-      <p class="love-text">💙 Aruu & Lakshu 💙</p>
-      <img class="couple-photo" src="https://i.ibb.co/B2N4R4wr/IMG-20250603-131234.jpg" alt="Aryan & Aruu">
-    </div>
+  <section id="love" class="love">
+    <h2>Special 💙</h2>
+    <img src="https://i.ibb.co/B2N4R4wr/IMG-20250603-131234.jpg" alt="Couple Photo">
+    <p>💙 Aruu & Lakshu 💙</p>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
-    <div class="contact">
-      <h2>📬 Contact Me</h2>
-      <div class="socials">
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/aryan_for_s?igsh=c3Z3ODB3NmlydzEx" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-        </a>
-        <!-- WhatsApp -->
-        <a href="https://wa.me/7000482653" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-        </a>
-      </div>
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <div class="socials">
+      <a href="https://www.instagram.com/aryan_for_s?igsh=c3Z3ODB3NmlydzEx" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      <a href="https://wa.me/7000482653" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>✨ Made with ❤️ by Aryan Keer ✨</p>
+    ✨ Made with ❤️ by Aryan Keer ✨
   </footer>
 
 </body>
