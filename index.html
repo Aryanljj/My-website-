@@ -15,7 +15,6 @@
       --text: #f0f6fc;
       --accent: #58a6ff;
     }
-
     * {
       margin: 0;
       padding: 0;
@@ -41,25 +40,24 @@
       z-index: 10;
     }
 
-    .logo-title {
+    /* Logo + Text container */
+    .logo-container {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
-
-    .logo-title img {
+    .logo-container img {
       width: 45px;
       height: 45px;
       border-radius: 50%;
       border: 2px solid var(--accent);
     }
-
-    .site-title {
-      font-size: 28px;
+    .logo-container h1 {
+      font-size: 22px;
       font-weight: 700;
-      background: linear-gradient(90deg, #ff0080, #7928ca, #0077ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--accent);
+      font-family: 'Segoe Script', cursive;
+      letter-spacing: 1px;
     }
 
     nav a {
@@ -152,109 +150,4 @@
     }
     button {
       padding: 10px 20px;
-      background: var(--accent);
-      border: none;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #005ec7;
-    }
-
-    footer {
-      padding: 20px;
-      background: var(--bg);
-      border-top: 2px solid var(--accent);
-      text-align: center;
-      margin-top: 50px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="logo-title">
-      <img src="logo.png" alt="Logo">
-      <h1 class="site-title">Aryan & Aruu</h1>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#love">Love</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
-  </header>
-
-  <section class="hero" id="home">
-    <img src="https://i.ibb.co/8Dfdkz1W/IMG-20250219-070558.jpg" alt="Aryan">
-    <h2>Hey 👋, I’m Aryan Keer</h2>
-    <p>Life is short, so live it with full energy 🔥⚡</p>
-  </section>
-
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <p>Welcome to my stylish website 💙✨<br>
-       I love creating, exploring, and living with positivity!</p>
-  </section>
-
-  <section class="love" id="love">
-    <h2>💙 Special 💙</h2>
-    <img src="https://i.ibb.co/B2N4R4wr/IMG-20250603-131234.jpg" alt="Aryan & Aruu">
-    <h3>💙 Aruu & Lakshu 💙</h3>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <div class="socials">
-      <a href="https://www.instagram.com/aryan_for_s?igsh=c3Z3ODB3NmlydzEx" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-      </a>
-      <a href="https://wa.me/7000482653" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-      </a>
-    </div>
-
-    <form onsubmit="sendMail(event)">
-      <input type="text" id="name" placeholder="Your Name" required><br>
-      <input type="email" id="email" placeholder="Your Email" required><br>
-      <textarea id="message" placeholder="Your Message" rows="4" required></textarea><br>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    ✨ Made with ❤️ by Aryan Keer ✨
-  </footer>
-
-  <script>
-    // Theme toggle
-    function toggleTheme() {
-      document.body.dataset.theme =
-        document.body.dataset.theme === "dark" ? "light" : "dark";
-    }
-
-    // Scroll animations
-    const sections = document.querySelectorAll(".about, .love, .contact");
-    window.addEventListener("scroll", () => {
-      sections.forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          sec.classList.add("show");
-        }
-      });
-    });
-
-    // Contact form
-    function sendMail(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-      window.location.href = `mailto:aryankeer7000@gmail.com?subject=Message from ${name} (${email})&body=${message}`;
-    }
-  </script>
-</body>
-</html>
+      background:
