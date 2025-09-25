@@ -8,6 +8,9 @@
   <!-- ✅ Favicon -->
   <link rel="icon" type="image/png" href="https://i.ibb.co/6c1QNLGt/IMG-20250924-153953.jpg">
 
+  <!-- ✅ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <!-- ✅ SEO Meta Tags -->
   <meta name="description" content="Aryan & Aruu - A stylish website full of love, vibes, and positivity. 💙✨">
   <meta name="keywords" content="Aryan, Aruu, Lakshu, Aryan Keer, Aryan & Aruu, Love Story, Couple Website, Stylish Website">
@@ -154,7 +157,6 @@
       transform: translateY(0);
     }
 
-    /* ✅ Special Section Image */
     .love img {
       width: 200px;
       height: 200px;
@@ -162,12 +164,27 @@
       border: 4px solid hotpink;
       box-shadow: 0 0 20px pink;
       margin-top: 20px;
-      object-fit: cover;
     }
     .love h3 {
       font-size: 24px;
       margin-top: 15px;
       color: hotpink;
+    }
+
+    /* ✅ Stylish Quote */
+    .love-quote {
+      font-family: 'Great Vibes', cursive;
+      font-size: 28px;
+      margin-top: 20px;
+      color: hotpink;
+      text-shadow: 0 0 10px rgba(255,105,180,0.8),
+                   0 0 20px rgba(255,105,180,0.6),
+                   0 0 30px rgba(255,20,147,0.8);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px hotpink, 0 0 20px deeppink; }
+      to   { text-shadow: 0 0 20px hotpink, 0 0 40px deeppink; }
     }
 
     .socials a {
@@ -273,11 +290,11 @@
        I love creating, exploring, and living with positivity!</p>
   </section>
 
-  <!-- ✅ Updated Special Section -->
   <section class="love" id="love">
     <h2>💙 Special 💙</h2>
     <img src="https://i.ibb.co/YvzGNZ2/Snapchat-1884961068.jpg" alt="Aryan & Aruu">
     <h3>💙 Aruu & Lakshu 💙</h3>
+    <p class="love-quote">Two souls, one heartbeat — Aryan & Aruu.</p>
   </section>
 
   <section class="contact" id="contact">
@@ -298,7 +315,6 @@
     </form>
   </section>
 
-  <!-- ✅ Support Section -->
   <section class="payment" id="payment">
     <h2>Support Us 💖</h2>
     <p>If you like our work, you can support us by a small payment.</p>
@@ -313,18 +329,13 @@
   </footer>
 
   <script>
-    // Theme toggle
     function toggleTheme() {
       document.body.dataset.theme =
         document.body.dataset.theme === "dark" ? "light" : "dark";
     }
-
-    // Hamburger menu toggle
     function toggleMenu() {
       document.querySelector("nav").classList.toggle("active");
     }
-
-    // Scroll animations
     const sections = document.querySelectorAll(".about, .love, .contact, .payment");
     window.addEventListener("scroll", () => {
       sections.forEach(sec => {
@@ -334,8 +345,6 @@
         }
       });
     });
-
-    // Contact form
     function sendMail(e) {
       e.preventDefault();
       const name = document.getElementById("name").value;
