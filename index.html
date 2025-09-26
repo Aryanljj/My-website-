@@ -139,8 +139,25 @@
       margin-top: 20px;
     }
     .hero h2 {
-      font-size: 28px;
+      font-size: 32px;
       margin-top: 20px;
+      color: red;
+      display: inline-block;
+      position: relative;
+    }
+    .hero h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      height: 3px;
+      width: 0;
+      background: red;
+      animation: underline 2s infinite alternate;
+    }
+    @keyframes underline {
+      from { width: 0; }
+      to { width: 100%; }
     }
     .hero p {
       margin-top: 10px;
@@ -155,6 +172,14 @@
     .about.show, .love.show, .contact.show, .payment.show {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* ✅ About Section */
+    .about-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: black;
+      font-weight: 600;
     }
 
     .love img {
@@ -278,16 +303,21 @@
     </div>
   </header>
 
+  <!-- ✅ Hero Section -->
   <section class="hero" id="home">
     <img src="https://i.ibb.co/vCt6T6DD/IMG-20250924-210352.jpg" alt="Aryan">
-    <h2>Hey 👋, I’m Aryan Keer</h2>
+    <h2>Mr. Aryan Keer</h2>
     <p>Life is short, so live it with full energy 🔥⚡</p>
   </section>
 
+  <!-- ✅ About Section -->
   <section class="about" id="about">
     <h2>About Me</h2>
-    <p>Welcome to my stylish website 💙✨<br>
-       I love creating, exploring, and living with positivity!</p>
+    <p class="about-text">
+      Hi 👋 I'm <span style="color:red;">Mr. Aryan Keer</span><br>
+      I love creating stylish websites, exploring new ideas,  
+      and living life with full positivity 💙✨
+    </p>
   </section>
 
   <section class="love" id="love">
